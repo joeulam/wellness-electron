@@ -12,4 +12,14 @@ const createWindow = () => {
   })
 
 
-  /*
+
+  //Backend stuff dw abt it
+  var mysql = require('mysql');
+
+  if(login)
+  {
+    win.loadFile('Dashboard')
+  }
+  else{
+    print("ew")
+  }
