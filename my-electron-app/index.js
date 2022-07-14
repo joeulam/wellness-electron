@@ -11,7 +11,9 @@ const createWindow = () => {
     createWindow()
   })
 
-   function logining(){
+  
+//THIS FILE IS A SERVER SIDED FILE??//
+   
     var mysql = require('mysql2');
      var con = mysql.createConnection({
        host: "localhost",
@@ -27,7 +29,6 @@ const createWindow = () => {
          console.log("connected!");
        }
      });
-   }
 
   
 

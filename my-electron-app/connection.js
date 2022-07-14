@@ -1,10 +1,15 @@
 //Backend stuff dw abt it
-var login = document.getElementById("login");
-login.addEventListener("click",loging);
-import {logining} from "./index.js";
-function loging(){
-  alert("yas");
-  document.getElementById("login").style.color = "blue";
-  logining();
-}
 
+//Listens to on login button
+var login = document.getElementById("login");
+  login.addEventListener("click",loging);
+
+//Function of logging in
+  function loging(){
+    var username = document.getElementById("user").value;
+    var password = document.getElementById("pass").value;
+    alert(username + password);
+    
+    document.getElementById("login").style.color = "blue";
+    //logining();
+  }
