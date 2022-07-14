@@ -1,22 +1,13 @@
 //Backend stuff dw abt it
+var login = document.getElementById("login");
+login.addEventListener("click",loging);
+
+
 
 
 function loging(){
-  var mysql = require('mysql');
-
-var con = mysql.createConnection({
-  host: "localhost",
-  user: "yourusername",
-  password: "yourpassword"
-});
-    con.connect(function(err) {
-        if (err){
-          alert(console.log("failed!"));
-          throw err
-        }
-        else{
-          alert(console.log("connected!"));
-        }
-      });
+  alert("yas");
+  document.getElementById("login").style.color = "blue";
+    
 }
 

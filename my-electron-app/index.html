@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <script src="connection.js" defer></script>
     <title>Hello World!</title>
   </head>
+
   <body>
+    
     <h1>Welcome to Heyo</h1>
-    <script type="text/javascript" src="connection.js"></script>
-    <button onclick="loging()">Login</button>
+
+    <button id="login">Login</button>
   </body>
 </html>
