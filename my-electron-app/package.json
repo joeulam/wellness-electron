@@ -10,8 +10,5 @@
   "license": "ISC",
   "devDependencies": {
     "electron": "^19.0.8"
-  },
-  "dependencies": {
-    "mysql2": "^2.3.3"
   }
 }
