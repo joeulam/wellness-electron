@@ -11,7 +11,11 @@ const createWindow = () => {
     createWindow()
   })
 
-  
+  var pg = require('pg');
+  import connectionString from "./connection"
+  var pgClient = new pg.Client(connectionString);
+  pgClient.connect();
+
 //THIS FILE IS A SERVER SIDED FILE??//
    
 
