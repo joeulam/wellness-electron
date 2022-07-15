@@ -3,7 +3,11 @@ const { app, BrowserWindow } = require('electron')
 const createWindow = () => {
     const win = new BrowserWindow({
       width: 800,
-      height: 600
+      height: 600,
+      webPreferences: {
+        nodeIntegration: true,
+        contextIsolation: false,
+    }
     })
   
     win.loadFile('index.html')
@@ -12,14 +16,9 @@ const createWindow = () => {
     createWindow()
   })
 
-function logins(user,pass){
-  var pg = require('pg');
-  var connectionString = "postgres://"+user+":"+pass+"@heyo/ip:5432/heyo_scales";
-  var pgClient = new pg.Client(connectionString);
-  pgClient.connect();
-};
 
-export {logins};
+
+
 
 //THIS FILE IS A SERVER SIDED FILE??//
    
