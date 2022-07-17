@@ -10,14 +10,24 @@ function logins(user,pass){
   var pg = require('pg');
   var connectionString = "postgres://"+user+":"+pass+"@heyo/ip:5432/heyo_scales";
   var pgClient = new pg.Client(connectionString);
-  pgClient.connect();
+  return connection(pgClient);
 };
+async function connection(a){
+  const b = await a.connect();
+  if(b.done()){
+    return ("connected");
+  }
+  else{
+    return ("connection failed");
+  }
+  
+}
 
   function loging(){
     var username = document.getElementById("user").value;
     var password = document.getElementById("pass").value;
     //lib.logins(username,password);
-    logins(username,password);
+    alert(logins(username,password));
 
     alert(username + password);
     
