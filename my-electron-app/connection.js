@@ -8,20 +8,14 @@ login.addEventListener("click",loging);
 
 function logins(user,pass){
   var pg = require('pg');
-  var connectionString = "postgres://"+user+":"+pass+"@heyo/ip:5432/heyo_scales";
+  var connectionString = "postgres://"+user+":"+pass+"@localhost:5432/heyo_scale";
   var pgClient = new pg.Client(connectionString);
-  return connection(pgClient);
+  pgClient.connect(function(err){
+    if(err) throw err;
+    console.log("connected");
+  });
 };
-async function connection(a){
-  const b = await a.connect();
-  if(b.done()){
-    return ("connected");
-  }
-  else{
-    return ("connection failed");
-  }
-  
-}
+
 
   function loging(){
     var username = document.getElementById("user").value;
