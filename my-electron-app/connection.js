@@ -32,8 +32,6 @@ function logins(user,pass){
   function loging(){
     var username = document.getElementById("user").value;
     var password = document.getElementById("pass").value;
-    alert(username + password);
-    alert(logins(username,password));
     
     document.getElementById("login").style.color = "blue";
   };
