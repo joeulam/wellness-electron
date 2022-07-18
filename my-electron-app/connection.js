@@ -22,12 +22,16 @@ function logins(user,pass){
     }
     else{
       console.log("Connected");
+      dashboard();
     }
   }
   );
   
 };
-
+function dashboard()
+{
+  window.location = "Dashboard.html";
+}
 
   function loging(){
     var username = document.getElementById("user").value;
