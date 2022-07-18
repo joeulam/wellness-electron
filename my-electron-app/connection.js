@@ -3,29 +3,38 @@
 //Listens to on login button
 var login = document.getElementById("login");
 login.addEventListener("click",loging);
-//const {logins} = require('./index');
-//Function of logging in
 
 function logins(user,pass){
   var pg = require('pg');
   var connectionString = "postgres://"+user+":"+pass+"@localhost:5432/heyo_scale";
   var pgClient = new pg.Client(connectionString);
+  
+  /*pgClient.connect(function(err){
+    if(err) throw err;{
+      console.log("connected");
+    } 
+  }
+  );*/
+
   pgClient.connect(function(err){
-    if(err) throw err;
-    console.log("connected");
-  });
+    if(err) {
+      console.log("error");
+    }
+    else{
+      console.log("Connected");
+    }
+  }
+  );
+  
 };
 
 
   function loging(){
     var username = document.getElementById("user").value;
     var password = document.getElementById("pass").value;
-    //lib.logins(username,password);
-    alert(logins(username,password));
-
     alert(username + password);
+    alert(logins(username,password));
     
     document.getElementById("login").style.color = "blue";
-    //logining();
   };
   
