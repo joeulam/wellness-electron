@@ -24,9 +24,12 @@ function logins(user,pass){
   
 };
 
+
+
+
 function dashboard()
 {
-  loadHTML(fs.readfile('my-electron-app/Dashboard.html'));
+  window.location = "Dashboard.html";
 }
 
   function loging(){
