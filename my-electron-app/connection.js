@@ -14,6 +14,7 @@ function logins(user,pass){
   pgClient.connect(function(err){
     if(err) {
       console.log("error");
+      document.getElementById("loginfo").style.visibility = "visible";
     }
     else{
       console.log("Connected");
