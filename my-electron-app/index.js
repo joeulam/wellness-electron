@@ -1,5 +1,5 @@
 //THIS IS A MODULE
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
 const createWindow = () => {
     const win = new BrowserWindow({
       width: 800,
@@ -17,7 +17,8 @@ const createWindow = () => {
   })
 
 
-
+  
+ 
 
 
 //THIS FILE IS A SERVER SIDED FILE??//
