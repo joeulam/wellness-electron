@@ -1,6 +1,5 @@
 //Backend stuff dw abt it
 
-const { fstat } = require('original-fs');
 
 //Listens to on login button
 var login = document.getElementById("login");
@@ -27,7 +26,6 @@ function logins(user,pass){
 
 
 
-
 function dashboard()
 {
   window.location = "Dashboard.html";
@@ -39,4 +37,8 @@ function dashboard()
     logins(username,password);
     document.getElementById("login").style.color = "blue";
   };
+
+
+
+
   
