@@ -2,7 +2,7 @@
 
 
 //Listens to on login button
-var login = document.getElementById("login");
+var login = document.getElementById("loginbutton");
 login.addEventListener("click",loging);
 
 function logins(user,pass){
@@ -32,10 +32,16 @@ function dashboard()
 }
 
   function loging(){
-    var username = document.getElementById("user").value;
-    var password = document.getElementById("pass").value;
-    logins(username,password);
-    document.getElementById("login").style.color = "blue";
+    var username = document.getElementById("UserInput").value;
+    var password = document.getElementById("PassInput").value;
+    if((username||password)=="")
+    {
+      console.log("error2");
+    }
+    else{
+      logins(username,password);
+      document.getElementById("loginbutton").style.color = "blue";
+    }
   };
 
 
