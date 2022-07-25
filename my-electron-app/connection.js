@@ -13,7 +13,7 @@ function logins(user,pass){
   pgClient.connect(function(err){
     if(err) {
       console.log("error");
-      document.getElementById("loginfo").style.visibility = "visible";
+      document.getElementById("incorrect").style.visibility = "visible";
     }
     else{
       console.log("Connected");
@@ -37,6 +37,7 @@ function dashboard()
     if((username||password)=="")
     {
       console.log("error2");
+      document.getElementById("incorrect").style.visibility = "visible";
     }
     else{
       logins(username,password);

@@ -18,7 +18,7 @@
 	
 }
 
-.container input {
+.Inputbox {
   width:75%;
   margin: 30px 45px 30px 45px;
   padding: 20px 3px 20px 3px;
@@ -32,13 +32,13 @@ h1 {
   /* text-align: center;
 	margin: 0 auto;*/
   display: block;
-  background-color: #2A9134;
+  background-color: #5eb366;
   color: black;
   padding: 15px 32px;
   font-size: 24px;
   font-family: 'Gaegu', sans-serif;
   text-align: center;
-  margin: 0px 45px 0px 45px;
+  margin: 30px 120px 30px 140px; /*maybe centered more*/
 
 }
 
@@ -46,7 +46,7 @@ h1 {
 width: 50%;
 height: 25px;
 margin: 0px 45px 0px 45px;
-float:left;
+float:right;
 }
 
 .mini input{
@@ -66,4 +66,10 @@ float:left;
   bottom: 0;
   margin: auto;
   
+}
+
+#incorrect{
+    visibility: hidden;
+    margin: 0px 45px 0px 45px;
+
 }
