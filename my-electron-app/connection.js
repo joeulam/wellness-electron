@@ -7,7 +7,7 @@ login.addEventListener("click",loging);
 
 function logins(user,pass){
   var pg = require('pg');
-  var connectionString = "postgres://"+user+":"+pass+"@localhost:5432/heyo_scale";
+  var connectionString = "postgres://"+user+":"+pass+"@192.168.1.122:5432/heyo_scale";
   var pgClient = new pg.Client(connectionString);
   
   pgClient.connect(function(err){
