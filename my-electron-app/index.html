@@ -1,42 +1,34 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <title>Heyo</title>
-  </head>
 
-    <!-- link the css -->
-	  <link rel="stylesheet" href="./style.css">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>heyo</title>
+  <link href="./style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <style>
+    body {
+      background-image: url("https://wallpapercave.com/wp/wp6039328.jpg")
+    }
+  </style>
+  
+  <div class="container">
+    <h1>HEYO</h1>
+  <input class="Inputbox" id ="UserInput" type="text" placeholder="Username" name ="UserInput">
+  <label for="UserInput"> </label>
 
-  <!--work for yall-->
-  <body>
+  <input class="Inputbox" id ="PassInput" type="password" placeholder="Password" name ="PassInput">
+  <label for="PassInput"> </label>
+  <label id="incorrect">Incorrect username or password</label>
+    <div class="mini">
+      <label>Remember Me</label>
+      <input id ="rem"type="checkbox" name="RmberMe" checked="checked">
+    </div>
+    <button id="loginbutton">Login</button>
+  </div>
     
-    <h1>Welcome to heyo</h1>
-
-    <h1>Username</h1>
-    <input type="text" id="user";>
-
-    <h1>Password</h1>
-    <input type="password" id="pass";>
-
-    <button id="login">Login</button>
-    <p id="loginfo">Incorrect password or Username</p>
-
-
-
-
-
-    <!--
-    <form>
-      <label id="user2" for="user">Username: </label>
-      <input type="text" id="user" name="userin"><br><br>
-      <label for="pass">Password: </label>
-      <input type="password" id="pass" name="password"><br><br>
-    </form>
-    <button id="login">Login</button>-->
-  </body>
-  <script src="connection.js"></script>
-
+</body>
+  <script src="./connection.js"></script>
 </html>
