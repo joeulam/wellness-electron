@@ -1,3 +1,75 @@
-#loginfo{
+@import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@700&display=swap');
+
+
+.container {
+  width: 400px;
+  height: 500px;
+  background-color: #F6F4D2;
+	font-family: 'Gaegu', sans-serif;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+	
+}
+
+.Inputbox {
+  width:75%;
+  margin: 30px 45px 30px 45px;
+  padding: 20px 3px 20px 3px;
+}
+
+h1 {
+  text-align: center;
+}
+
+#loginbutton {
+  /* text-align: center;
+	margin: 0 auto;*/
+  display: block;
+  background-color: #5eb366;
+  color: black;
+  padding: 15px 32px;
+  font-size: 24px;
+  font-family: 'Gaegu', sans-serif;
+  text-align: center;
+  margin: 30px 120px 30px 140px; /*maybe centered more*/
+
+}
+
+.mini{
+width: 50%;
+height: 25px;
+margin: 0px 45px 0px 45px;
+float:right;
+}
+
+.mini input{
+    width: 5%;
+    height: 25px;
+    margin: 0px 0px 0px 0px;
+    float:left;
+
+}
+.mini label{
+
+}
+.mini button{
+    left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  
+}
+
+#incorrect{
     visibility: hidden;
+    margin: 0px 45px 0px 45px;
+
 }
