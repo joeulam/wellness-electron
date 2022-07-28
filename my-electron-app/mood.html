@@ -1,1 +1,21 @@
-<script src="dashboard.js"></script>
+
+<!DOCTYPE HTML>
+<html>
+    <link href="./mood.css" rel="stylesheet" type="text/css" />
+
+    <main>
+
+    </main>
+    <body>
+        <label>How do you feel today?</label>
+        <ul class="moodlist">
+            <li><input type="radio" id="bad" name="moods" value="bad"><lable for="bad">Bad</lable></li>
+            <li><input type="radio" id="meh" name="moods" value="meh"><lable for="meh">Meh</lable></li>
+            <li><input type="radio" id="Pretty good" name="moods" value="Pretty good"><lable for="Pretty good">Pretty good</lable></li>
+        </ul>
+        <label>Diary entry</label><br>
+        <textarea row="4" cols="50"></textarea>
+        <button id="Submitresp">Submit</button>
+    </body>
+    <script src="./connection.js"></script>
+</html>
