@@ -7,7 +7,9 @@ const createWindow = () => {
       webPreferences: {
         nodeIntegration: true,
         contextIsolation: false,
+        preload: "my-electron-app/preload.js"
     }
+    
     })
   
     win.loadFile('index.html')
@@ -17,7 +19,7 @@ const createWindow = () => {
   })
 
 
-  
+
  
 
 
