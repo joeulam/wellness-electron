@@ -70,6 +70,8 @@ if(document.getElementById("Submitresp")){
 }
   
 var mood;
+
+
   function moodradio() {
     console.log("running");
     var diarys = document.getElementById("Diary").value;
