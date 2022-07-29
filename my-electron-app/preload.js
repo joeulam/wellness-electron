@@ -1,6 +1,10 @@
-const { ipcRenderer,contextBridge } = require("electron")
-
-contextBridge.exposeInMainWorld("api", {
-
+const { contextBridge } = require("electron");
+const { Client } = require('pg');
+const API = {
     
-});
+    
+    
+}
+
+window.api;
+contextBridge.exposeInMainWorld("api",API)

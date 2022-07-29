@@ -18,14 +18,19 @@ function show(){
 }
 
 function logins(user,pass){
-  var pg = require('pg');
+  const Client = window.api
+  console.log(window.api);
   var connectionString = "postgres://"+user+":"+pass+"@74.68.42.21:5432/heyo_scale";
   localStorage.setItem("userg",user);
   localStorage.setItem("passg",pass);
 
-  var pgClient = new pg.Client(connectionString);
   
-  conp =pass;
+  
+  console.log(window.api);
+
+  const pgClient = new Client(connectionString);
+  
+  conp = pass;
   pgClient.connect(function(err){
     if(err) {
       console.log("error");

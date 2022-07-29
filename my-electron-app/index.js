@@ -1,16 +1,18 @@
 //THIS IS A MODULE
 const { app, BrowserWindow, ipcMain } = require('electron')
+const path = require('path')
+
 const createWindow = () => {
     const win = new BrowserWindow({
       width: 1920,
       height: 1080,
       webPreferences: {
-        nodeIntegration: true,
-        contextIsolation: false,
-        preload: "my-electron-app/preload.js"
+        nodeIntegration: false,
+        contextIsolation: true,
+        preload: path.join(__dirname, 'preload.js'),
     }
     
-    })
+    });
   
     win.loadFile('index.html')
   }
