@@ -1,0 +1,110 @@
+/* sidebar */
+@import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@700&display=swap');
+
+.sidebar{
+    position: absolute;
+    width: 235px;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    z-index: -100;
+    background: #B07D62;
+}
+
+
+
+/* Heyo bg */
+
+.heyobg{
+    position: absolute;
+    width: 235px;
+    height: 81px;
+    left: 0px;
+    top: 0px;
+    z-index: -100;
+    display:inline-block;
+    background: #ADC178;
+}
+
+
+/*Side menu choices*/
+.choices{
+    position: absolute;
+    top:81px;
+    height: 123px;
+    width: 235px;
+}
+.choices label{
+padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  display: block;
+  font-family: 'Gaegu', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 29px;
+    text-align: left;
+}
+
+
+/* ENTRY */
+
+#Entry{
+    width: 259px;
+    height: 41px;    
+    color: #FFFFFF;
+}
+
+
+
+
+/* CALENDAR */
+
+#cal{
+    width: 259px;
+    height: 41px;    
+    color: #FFFFFF;
+}
+
+
+
+
+/* DASHBOARD */
+
+#dash{
+    width: 259px;
+    height: 41px;    
+    color: #FFFFFF;
+    padding-top: 15px;
+    
+}
+
+
+
+/* HEYO */
+
+#heyo{
+    position: absolute;
+
+margin-left: 60px;
+font-family: 'Gaegu', sans-serif;
+font-style: normal;
+font-weight: 700;
+font-size: 48px;
+line-height: 0px;
+display: flex;
+align-items: flex-end;
+text-align: center;
+
+color: #FFFFFF;
+
+}
+
+#moods{
+    position: absolute;
+width: 270px;
+height: 87px;
+left: 1115px;
+top: 874px;
+}
+
