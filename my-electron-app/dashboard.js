@@ -43,7 +43,24 @@ function sidebarclose()
   var elems = document.getElementsByClassName('choices');
   for (var i=0;i<elems.length;i+=1){
   elems[i].style.display = 'none';
-  document.getElementsByClassName('sidebar')[i].style.background = "#f6f4d2";
+  document.getElementsByClassName('sidebar')[i].style.background = "#EBD4AB";
+
+  }
+}
+
+var style = document.getElementById("theme")
+style.addEventListener("click",change)
+var b = 0;
+function change(){
+
+  if(b%2==0)
+  {
+    b++;
+    document.getElementById("pagestyle").setAttribute("href", "./dashboard2.css");
+  }
+  else{
+    b++;
+    document.getElementById("pagestyle").setAttribute("href", "./dashboard.css");
 
   }
 }

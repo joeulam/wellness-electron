@@ -8,27 +8,26 @@
     left: 0px;
     top: 20px;
     z-index: -100;
-    background: #f6f4d2;
+    background: #EBD4AB;
     border-radius: 0px 25px 25px 0px;
 }
 
 .back{
-    background: #f6f4d2;
+    background: #EBD4AB;
     z-index: -1000;
+    user-select: none;
+
 }
 
 /* Heyo bg */
 
 .heyobg{
-    position: absolute;
-    width: 235px;
-    height: 85px;
-    left: -1px;
-    top: -20px;
-    z-index: -100;
-    display:inline-block;
-    background: #d4e09b;
-    border-radius: 0px 25px 25px 25px;
+    border-radius:0px 25px 25px 25px;
+    width:259px;
+    height:81px;
+    margin-top: -20px;
+    background-color:#d4e09b;
+    box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
 
 }
 
@@ -53,8 +52,8 @@ padding: 6px 8px 6px 16px;
   display: block;
   font-family: 'Gaegu', sans-serif;
     font-style: normal;
-    font-weight: 700;
-    font-size: 38px;
+    font-weight: 500;
+    font-size: 24px;
     line-height: 29px;
     text-align: left;
 }
@@ -118,7 +117,7 @@ padding: 6px 8px 6px 16px;
     position: absolute;
     user-select:none;
 
-margin-left: 60px;
+margin-left: 70px;
 font-family: 'Gaegu', sans-serif;
 font-style: normal;
 font-weight: 700;
@@ -154,5 +153,14 @@ top: 674px;
 font-family: 'Gaegu', sans-serif;
 user-select:none;
 
+}
+
+#img{
+    width:975px;
+    height:315px;
+    position:absolute;
+    left: 406px;
+    top: 27px;
+    user-select: none;
 }
 

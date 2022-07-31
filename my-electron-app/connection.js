@@ -105,6 +105,8 @@ var mood;
             gconn.query(sql, function (err, result) {
               if (err) throw err;
               console.log("2 record inserted");
+              window.location = "Dashboard.html";
+
             });
           }
           
