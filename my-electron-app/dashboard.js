@@ -13,19 +13,37 @@ function moodtr()
 }
 
 var sidebaro = document.getElementById("heyo");
-sidebaro.addEventListener("click",side);
+var sidebaros = document.getElementById("heyobg");
+sidebaros.addEventListener("click",sidebar);
+sidebaro.addEventListener("click",sidebar);
 
-function side()
-{
-  sidebar();
-}
 
+var a = 0;
 function sidebar()
 {
-  document.getElementsByClassName("choices").style.display = "none";
+  if(a%2==0)
+  {
+    a++;
+    var elems = document.getElementsByClassName('choices');
+    for (var i=0;i<elems.length;i+=1){
+    elems[i].style.display = 'block';
+    document.getElementsByClassName('sidebar')[i].style.background = "#B07D62";
+    }
+  }
+  else{
+    sidebarclose()
+    a++;
+  }
+
 }
+
 
 function sidebarclose()
 {
+  var elems = document.getElementsByClassName('choices');
+  for (var i=0;i<elems.length;i+=1){
+  elems[i].style.display = 'none';
+  document.getElementsByClassName('sidebar')[i].style.background = "#f6f4d2";
 
+  }
 }
