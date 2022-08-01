@@ -1,0 +1,166 @@
+/* sidebar */
+@import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@700&display=swap');
+
+.sidebar{
+    position: absolute;
+    width: 233px;
+    height: 45%;
+    left: 0px;
+    top: 20px;
+    z-index: -100;
+    background: #EBD4AB;
+    border-radius: 0px 25px 25px 0px;
+}
+
+.back{
+    background: #EBD4AB;
+    z-index: -1000;
+    user-select: none;
+
+}
+
+/* Heyo bg */
+
+.heyobg{
+    border-radius:0px 25px 25px 25px;
+    width:259px;
+    height:81px;
+    margin-top: -20px;
+    background-color:#d4e09b;
+    box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+.heyobg:hover{
+    box-shadow: 0 12px 16px 0 rgba(128, 126, 126, 0.24);
+    border-radius: 0px 25px 25px 25px;
+
+}
+/*Side menu choices*/
+.choices{
+    position: absolute;
+    top:81px;
+    height: 123px;
+    width: 233px;
+    display: none;
+    background: #B07D62;
+
+}
+.choices label{
+padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  display: block;
+  font-family: 'Gaegu', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: left;
+}
+#Entry:hover
+{
+    background: #8b634d;
+    border-radius: 25px;
+
+}
+#cal:hover
+{
+    background: #8b634d;
+    border-radius: 25px;
+
+}
+#dash:hover
+{
+    background: #8b634d;
+    border-radius: 25px;
+}
+/* ENTRY */
+
+#Entry{
+    width: 210px;
+    height: 41px;
+    padding-top: 16px;
+    color: #FFFFFF;
+}
+
+
+
+
+/* CALENDAR */
+
+#cal{
+    width: 210px;
+    height: 41px;    
+    color: #FFFFFF;
+    padding-top: 15px;
+
+}
+
+
+
+
+/* DASHBOARD */
+
+#dash{
+    width: 210px;
+    height: 41px;    
+    color: #FFFFFF;
+    padding-top: 15px;
+
+}
+
+
+
+/* HEYO */
+
+#heyo{
+    position: absolute;
+    user-select:none;
+
+margin-left: 70px;
+font-family: 'Gaegu', sans-serif;
+font-style: normal;
+font-weight: 700;
+font-size: 48px;
+line-height: 0px;
+display: flex;
+align-items: flex-end;
+text-align: center;
+
+color: #FFFFFF;
+
+}
+
+#todo{
+    color: #FFFFFF;
+    font-family: 'Gaegu', sans-serif;
+    padding-top: 15px;
+    width: 210px;
+    height: 41px;
+}
+
+#todo:hover{
+    background: #8b634d;
+    border-radius: 25px;
+}
+
+#moods{
+    position: absolute;
+width: 270px;
+height: 87px;
+left: 1115px;
+top: 674px;
+font-family: 'Gaegu', sans-serif;
+user-select:none;
+
+}
+
+#img{
+    width:975px;
+    height:315px;
+    position:absolute;
+    left: 406px;
+    top: 27px;
+    user-select: none;
+}
+

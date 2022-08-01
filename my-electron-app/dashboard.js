@@ -64,3 +64,17 @@ function change(){
 
   }
 }
+
+var sdash = document.getElementById("dash")
+sdash.addEventListener("click",dash)
+function dash(){
+  window.location = "dashboard.html";
+
+}
+
+var stodo = document.getElementById("todo")
+stodo.addEventListener("click",todo)
+function todo(){
+  window.location = "task.html";
+
+}

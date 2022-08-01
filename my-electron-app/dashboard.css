@@ -9,7 +9,7 @@
     top: 20px;
     z-index: -100;
     background: #EBD4AB;
-    border-radius: 0px 25px 25px 0px;
+    border-radius: 0px 0px 25px 25px;
 }
 
 .back{
@@ -55,7 +55,8 @@ padding: 6px 8px 6px 16px;
     font-weight: 500;
     font-size: 24px;
     line-height: 29px;
-    text-align: left;
+    text-align: center;
+    margin-right: 15px;
 }
 #Entry:hover
 {
@@ -116,11 +117,10 @@ padding: 6px 8px 6px 16px;
 #heyo{
     position: absolute;
     user-select:none;
-
-margin-left: 70px;
+margin-left: 71px;
 font-family: 'Gaegu', sans-serif;
 font-style: normal;
-font-weight: 700;
+font-weight: 600;
 font-size: 48px;
 line-height: 0px;
 display: flex;
