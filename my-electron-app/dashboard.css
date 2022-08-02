@@ -3,8 +3,8 @@
 
 .sidebar{
     position: absolute;
-    width: 233px;
-    height: 45%;
+    width: 259px;
+    height: 47%;
     left: 0px;
     top: 20px;
     z-index: -100;
@@ -41,13 +41,14 @@
     position: absolute;
     top:81px;
     height: 123px;
-    width: 233px;
+    width: 259px;
     display: none;
     background: #B07D62;
 
 }
 .choices label{
-padding: 6px 8px 6px 16px;
+    align-items: center;
+/*padding: 6px 8px 6px 16px;*/
   text-decoration: none;
   display: block;
   font-family: 'Gaegu', sans-serif;
@@ -56,25 +57,15 @@ padding: 6px 8px 6px 16px;
     font-size: 24px;
     line-height: 29px;
     text-align: center;
-    margin-right: 15px;
+    margin:auto;
 }
-#Entry:hover
-{
-    background: #8b634d;
-    border-radius: 25px;
 
-}
-#cal:hover
-{
+.choices label:hover{
     background: #8b634d;
     border-radius: 25px;
+    align-items: center;
+}
 
-}
-#dash:hover
-{
-    background: #8b634d;
-    border-radius: 25px;
-}
 /* ENTRY */
 
 #Entry{
