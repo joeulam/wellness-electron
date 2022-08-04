@@ -77,15 +77,9 @@ var mood;
     var diarys = document.getElementById("Diary").value;
     
     var sql;
-      if(document.getElementById("bad").checked){
-        mood = 0;
-      }
-      else if(document.getElementById("meh").checked){
-        mood = 5;
-      }
-      else if(document.getElementById("Pretty good").checked){
-        mood = 10;
-      }
+    mood = document.querySelector('input[name="moods"]:checked').value;
+
+
     
     var pg = require('pg');
     let usernameg = localStorage.getItem("userg");

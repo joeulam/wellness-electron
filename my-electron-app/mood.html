@@ -1,6 +1,6 @@
 
 <!DOCTYPE HTML>
-<html>
+<html id="back">
     <link href="./mood.css" rel="stylesheet" type="text/css" />
 
     <main>
@@ -9,12 +9,38 @@
     <body>
         <label>How do you feel today?</label>
         <ul class="moodlist">
-            <li><input type="radio" id="bad" name="moods" value="bad"><lable for="bad">Bad</lable></li>
-            <li><input type="radio" id="meh" name="moods" value="meh"><lable for="meh">Meh</lable></li>
-            <li><input type="radio" id="Pretty good" name="moods" value="Pretty good"><lable for="Pretty good">Pretty good</lable></li>
+            <div id="moodl">
+                <label for="0">0</label>
+                <label for="1">1</label>
+                <label for="2">2</label>
+                <label for="3">3</label>
+                <label for="4">4</label>
+                <label for="5">5</label>
+                <label for="6">6</label>
+                <label for="7">7</label>
+                <label for="8">8</label>
+                <label for="9">9</label>
+                <label for="10">10</label><br>
+            </div>
+            
+            <div id="radio1">
+                <li><input type="radio" id="0" name="moods" value="0"></li>
+                <li><input type="radio" id="1" name="moods" value="1"></li>
+                <li><input type="radio" id="2" name="moods" value="2"></li>
+                <li><input type="radio" id="3" name="moods" value="3"></li>
+                <li><input type="radio" id="4" name="moods" value="4"></li>
+                <li><input type="radio" id="5" name="moods" value="5"></li>
+                <li><input type="radio" id="6" name="moods" value="6"></li>
+                <li><input type="radio" id="7" name="moods" value="7"></li>
+                <li><input type="radio" id="8" name="moods" value="8"></li>
+                <li><input type="radio" id="9" name="moods" value="9"></li>
+                <li><input type="radio" id="10" name="moods" value="10"></li>
+            </div>
+            
+
         </ul>
         <label>Diary entry</label><br>
-        <textarea id ="Diary" row="4" cols="50"></textarea><br>
+        <textarea id ="Diary" row="10" cols="30"></textarea><br>
         <button id="Submitresp">Submit</button>
     </body>
     <script src="./connection.js"></script>
