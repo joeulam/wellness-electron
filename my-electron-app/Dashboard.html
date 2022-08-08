@@ -19,29 +19,12 @@
     </head>
     <body>
         <div id="img">
-            <canvas id="chart" width="850px" height="315px"></canvas>
+            <canvas id="mychart" width="850px" height="315px"></canvas>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
         <script>
-            var Chart = require('chart.js');
-            var ctx = document.getElementById('chart').getContext('2d');
-            var chart = new Chart(ctx, {
-            // The type of chart we want to create
-            type: 'line',
-
-            // The data for our dataset
-            data: {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-            datasets: [{
-                label: 'ur mom',
-                backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 99, 132)',
-                data: [0, 10, 5, 2, 20, 30, 45]
-    }]
-},
-// Configuration options go here
-            options: {}
-});
-
+        
           </script>
         <button id="moods">Record mood</button>
         <div id="wtodo">To Do</div>
