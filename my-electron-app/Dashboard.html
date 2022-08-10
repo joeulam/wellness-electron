@@ -29,44 +29,73 @@
     let conp = localStorage.getItem("passg");
             let today = new Date().toISOString();
           var moodchart = [];
+          var datechart = [];
+
           var gconn = new pg.Client("postgres://"+usernameg+":"+conp+"@74.68.42.21:5432/heyo_scale");
           gconn.connect(function (err){
-            var i = 1;
-          while(i<8){
-            console.log(i);
+            
+          
             var rang= new Date();
-            var isodate = rang.setDate(rang.getDate() - i);
+            var isodate = rang.setDate(rang.getDate() - 7);
             isodate = new Date(isodate).toISOString();
             sql = "SELECT moodrating FROM public."+usernameg+" WHERE date between '"+isodate+"' and '"+today+"'";
-            
-                gconn.query(sql, function (err, result) {});
-                console.log("Data "+i+" taken");
-                  moodchart[i] = sql;
-                  console.log(sql);
-                  i++;
-              }
-            
-            console.log(moodchart[i]+"pp");
-          }
-          );
-        var ctx = document.getElementById('mychart');
-          var mychart = new Chart(ctx, {
-          // The type of chart we want to create
-          type: 'line',
+            sql2 = "SELECT date FROM public."+usernameg+" WHERE date between '"+isodate+"' and '"+today+"'";
 
-          // The data for our dataset
-          data: {
-          labels: ['January', 'February'],
-          datasets: [{
-              label: 'ur mom',
-              backgroundColor: 'rgb(255, 99, 132)',
-              borderColor: 'rgb(255, 99, 132)',
-              data: moodchart
-  }]
-},
-// Configuration options go here
-
-});
+                gconn.query(sql, function (err, result) {
+                  rowMode:'array';
+                  if(err){
+                    console.log(err)
+                  }
+                  else{
+                      console.log(result)
+                    console.log(result.rows);
+                  }
+                  
+                  for(var i =0;i < 8;i++)
+                  {
+                    moodchart[i] = result.rows[i];
+                  console.log(moodchart[i]);
+                  console.log(moodchart)
+                  }
+                  
+                  gconn.query(sql2,function(err,result){
+                    for(var i =0;i < 8; i++)
+                    {
+                      datechart[i] = result.rows[i];
+                      console.log(datechart[i])
+                      console.log(datechart)
+                    }
+                  })
+                  var ctx = document.getElementById('mychart');
+                  var mychart = new Chart(ctx, {
+                  // The type of chart we want to create
+                  type: 'line',
+                  // The data for our dataset
+                  data: {
+                  labels: datechart,
+                  datasets: [{
+                      label: 'ur mom',
+                      backgroundColor: 'rgb(255, 99, 132)',
+                      borderColor: 'rgb(255, 99, 132)',
+                      data: moodchart
+                    }]
+                  },
+                  //config
+                  options: {
+                    scales: {
+                        x: {
+                            type: 'time',
+                            time: {
+                                unit: 'week'
+                            }
+                        }
+                    }
+                }
+                }); 
+              });
+                          
+              });
+        
           </script>
         <button id="moods">Record mood</button>
         <div id="wtodo">To Do</div>
