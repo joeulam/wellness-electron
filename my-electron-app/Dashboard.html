@@ -28,30 +28,27 @@
                 let usernameg = localStorage.getItem("userg");
     let conp = localStorage.getItem("passg");
             let today = new Date().toISOString();
-          var rang= new Date();
           var moodchart = [];
           var gconn = new pg.Client("postgres://"+usernameg+":"+conp+"@74.68.42.21:5432/heyo_scale");
           gconn.connect(function (err){
-          for(i = 0; i < 7; i++){
+            var i = 1;
+          while(i<8){
+            console.log(i);
+            var rang= new Date();
             var isodate = rang.setDate(rang.getDate() - i);
             isodate = new Date(isodate).toISOString();
             sql = "SELECT moodrating FROM public."+usernameg+" WHERE date between '"+isodate+"' and '"+today+"'";
-            //gconn.connect(function (err){
-              if(err)
-              {
-                console.log(err);
-              }
-              else{
-                gconn.query(sql, function (err, result) {
-                  if (err) throw err;
-                  console.log("Data "+i+" taken");
+            
+                gconn.query(sql, function (err, result) {});
+                console.log("Data "+i+" taken");
                   moodchart[i] = sql;
-                });
+                  console.log(sql);
+                  i++;
               }
-            //});
+            
             console.log(moodchart[i]+"pp");
           }
-        });
+          );
         var ctx = document.getElementById('mychart');
           var mychart = new Chart(ctx, {
           // The type of chart we want to create
