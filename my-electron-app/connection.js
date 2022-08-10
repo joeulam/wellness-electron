@@ -116,46 +116,8 @@ var mood;
           
         function moodget()
         {
-          let today = new Date().toISOString();
-          let rang= new Date();
-          const moodchart = [];
-          var gconn = new pg.Client("postgres://"+usernameg+":"+conp+"@74.68.42.21:5432/heyo_scale");
-          for(var i = 1; i <= 7; i++){
-            rang.setDate(rang.getDate() - i);
-            sql = "SELECT moodrating FROM public.'"+username+"' WHERE date between '"+rang+"' and '"+today+"'";
-            gconn.connect(function (err){
-              if(err)
-              {
-                console.log(sql);
-              }
-              else{
-                gconn.query(sql, function (err, result) {
-                  if (err) throw err;
-                  console.log("Data "+i+" taken");
-                  moodchart[i] = sql;
-                });
-              }
-            });
-            console.log(sql);
-          }
-          var ctx = document.getElementById('mychart');
-          var mychart = new Chart(ctx, {
-          // The type of chart we want to create
-          type: 'line',
-
-          // The data for our dataset
-          data: {
-          labels: ['January', 'February'],
-          datasets: [{
-              label: 'ur mom',
-              backgroundColor: 'rgb(255, 99, 132)',
-              borderColor: 'rgb(255, 99, 132)',
-              data: moodchart
-  }]
-},
-// Configuration options go here
-
-});
+          
+          
           
             
 

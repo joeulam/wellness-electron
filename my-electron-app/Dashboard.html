@@ -24,7 +24,52 @@
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
         <script>
-        
+                var pg = require('pg');
+                let usernameg = localStorage.getItem("userg");
+    let conp = localStorage.getItem("passg");
+            let today = new Date().toISOString();
+          var rang= new Date();
+          var moodchart = [];
+          var gconn = new pg.Client("postgres://"+usernameg+":"+conp+"@74.68.42.21:5432/heyo_scale");
+          gconn.connect(function (err){
+          for(i = 0; i < 7; i++){
+            var isodate = rang.setDate(rang.getDate() - i);
+            isodate = new Date(isodate).toISOString();
+            sql = "SELECT moodrating FROM public."+usernameg+" WHERE date between '"+isodate+"' and '"+today+"'";
+            //gconn.connect(function (err){
+              if(err)
+              {
+                console.log(err);
+              }
+              else{
+                gconn.query(sql, function (err, result) {
+                  if (err) throw err;
+                  console.log("Data "+i+" taken");
+                  moodchart[i] = sql;
+                });
+              }
+            //});
+            console.log(moodchart[i]+"pp");
+          }
+        });
+        var ctx = document.getElementById('mychart');
+          var mychart = new Chart(ctx, {
+          // The type of chart we want to create
+          type: 'line',
+
+          // The data for our dataset
+          data: {
+          labels: ['January', 'February'],
+          datasets: [{
+              label: 'ur mom',
+              backgroundColor: 'rgb(255, 99, 132)',
+              borderColor: 'rgb(255, 99, 132)',
+              data: moodchart
+  }]
+},
+// Configuration options go here
+
+});
           </script>
         <button id="moods">Record mood</button>
         <div id="wtodo">To Do</div>
