@@ -47,15 +47,13 @@
                   rowMode: 'array'
                   console.log(result.rows)
 
-                  for(var i =0;i < 8;i++)
+                  for(var i =0;i < result.rows.length;i++)
                   {
-                    if(result.rows.length < 8){
-                      i = 9;
-                    }
-                    else{
+            
+                    
                       var a = JSON.stringify(result.rows[i].moodrating);
                      moodchart[i] =JSON.parse(a);
-                    }
+                    
                     
                   }
 
@@ -63,16 +61,14 @@
       
                 });//first query
                   gconn.query(sql2,function(err,result){
-                    for(var i =0;i < 8; i++)
+                    for(var i =0;i < result.rows.length; i++)
                     {
-                      if(result.rows.length < 7){
-                      i = 9;
-                    }
-                    else{
+                      
+                    
                       datechart[i] = new Date(Object.values(result.rows[i]))
                       console.log(datechart[i])
                       datechart[i]= moment(datechart[i]).format('l')
-                    }
+                    
                       
                       //console.log(datechart[i])
                       //console.log(datechart)
