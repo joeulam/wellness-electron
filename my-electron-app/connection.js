@@ -99,7 +99,7 @@ var mood;
             console.log(diarys);
           }
           else{
-            sql = "INSERT INTO public."+ usernameg +"(moodrating, diary, date, datetime,timestamp) VALUES ("+mood+", '"+diarys+"','"+today+"',to_timestamp('"+datetime+"'),"+timestap+")";
+            sql = "INSERT INTO public."+ usernameg +"(moodrating, diary, date, datetime,timestamp) VALUES ("+mood+", '"+diarys+"','"+today+"',to_timestamp('"+datetime+"'),to_timestamp('"+timestap+"'))";
             document.getElementById("Submitresp").style.color = "blue";
             console.log(mood);
             console.log(today);
