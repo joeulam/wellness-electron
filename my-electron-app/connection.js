@@ -90,6 +90,7 @@ var mood;
     var gconn = new pg.Client("postgres://"+usernameg+":"+conp+"@74.68.42.21:5432/heyo_scale");
     let today = new Date().toISOString();
     var datetime = Math.floor(Date.now() / 1000);
+    var timestap = Date.now();
         gconn.connect(function (err){
           if(err){
             console.log(err);
@@ -98,7 +99,7 @@ var mood;
             console.log(diarys);
           }
           else{
-            sql = "INSERT INTO public."+ usernameg +"(moodrating, diary, date, datetime) VALUES ("+mood+", '"+diarys+"','"+today+"',to_timestamp('"+datetime+"'))";
+            sql = "INSERT INTO public."+ usernameg +"(moodrating, diary, date, datetime,timestamp) VALUES ("+mood+", '"+diarys+"','"+today+"',to_timestamp('"+datetime+"'),"+timestap+")";
             document.getElementById("Submitresp").style.color = "blue";
             console.log(mood);
             console.log(today);
