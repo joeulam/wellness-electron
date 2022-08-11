@@ -4,9 +4,10 @@ const createWindow = () => {
     const win = new BrowserWindow({
       width: 1600,
       height: 900,
-      //resizable:false,
+      resizable:false,
       autoHideMenuBar: true,
       webPreferences: {
+        devTools: false,
         nodeIntegration: true,
         contextIsolation: false,
         preload: "my-electron-app/preload.js"
