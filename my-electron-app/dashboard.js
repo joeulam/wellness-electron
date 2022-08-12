@@ -78,3 +78,22 @@ function todo(){
   window.location = "task.html";
 
 }
+
+function responseget()
+        {
+          var pg = require('pg');
+          let usernameg = localStorage.getItem("userg");
+          let conp = localStorage.getItem("passg");
+          var gconn = new pg.Client("postgres://"+usernameg+":"+conp+"@74.68.42.21:5432/heyo_scale");
+          gconn.connect(function (err){
+            sql = "SELECT diary FROM public."+usernameg+" t1 where not exists(select timestamp from public."+usernameg+" t2 where t1.timestamp < t2.timestamp)";
+            gconn.query(sql, function (err, result) {
+              console.log(result.rows)
+              var a = JSON.stringify(result.rows[0].diary);
+              var responsetxt =JSON.parse(a);
+              console.log(responsetxt)
+              document.getElementById("lastresponse").innerText = responsetxt;
+            })
+          })//connection 
+
+        };//response get

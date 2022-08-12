@@ -45,8 +45,7 @@ function logins(user,pass){
 function dashboard()
 {
   window.location = "Dashboard.html";
-  moodget();
-
+  
 }
 
   function loging(){
@@ -61,7 +60,7 @@ function dashboard()
     else{
       logins(username,password);
       document.getElementById("loginbutton").style.color = "blue";
-      moodget();
+      
     }
   };
 
@@ -108,24 +107,15 @@ var mood;
               if (err) throw err;
               console.log("2 record inserted");
               window.location = "Dashboard.html";
-              moodget();
+              
             });
           }
           
         });
+        
+      }
           
-          
-        function moodget()
-        {
-          
-          
-          
-            
-
-
-        }
-
-};
+        
   
 
   
