@@ -8,5 +8,8 @@
     "moment": "^2.29.4",
     "postgres-date": "^2.1.0",
     "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "electron-packager": "^15.5.1"
   }
 }
