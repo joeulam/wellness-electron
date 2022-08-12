@@ -86,7 +86,7 @@ function responseget()
           let conp = localStorage.getItem("passg");
           var gconn = new pg.Client("postgres://"+usernameg+":"+conp+"@74.68.42.21:5432/heyo_scale");
           gconn.connect(function (err){
-            sql = "SELECT diary FROM public."+usernameg+" t1 where not exists(select timestamp from public."+usernameg+" t2 where t1.timestamp < t2.timestamp)";
+            sql = "SELECT diary FROM public."+usernameg+" t1 where not exists(select timestamp,diary from public."+usernameg+" t2 where (t1.timestamp < t2.timestamp AND NOT t2.diary = ''))";
             gconn.query(sql, function (err, result) {
               console.log(result.rows)
               var a = JSON.stringify(result.rows[0].diary);
