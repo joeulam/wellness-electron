@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@700&display=swap');
+#back{
+    background: #EBD4AB;
+}
 .sidebar{
     position: absolute;
-    width: 259px;
-    height: 47%;
+    width: 258px;
+    height: 40%;
     left: 0px;
     top: 20px;
     z-index: -100;
@@ -12,7 +15,7 @@
 .heyobg{
     border-radius:0px 25px 25px 25px;
     width:259px;
-    height:81px;
+    height:75px;
     margin-top: -20px;
     background-color:#d4e09b;
     box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -28,8 +31,8 @@
 .choices{
     position: absolute;
     top:81px;
-    height: 123px;
-    width: 259px;
+    height: 100px;
+    width: 258px;
     display: none;
     background: #B07D62;
 
@@ -143,5 +146,9 @@ color: #FFFFFF;
 }
 
 #wip{
-    left: 500px
+    position: absolute;
+    width: 251px;
+    height: 34px;
+    left: 450px;
+    top: 400px;
 }

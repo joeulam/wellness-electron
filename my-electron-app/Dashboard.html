@@ -60,6 +60,7 @@
 
       
                 });//first query
+                responseget();
                   gconn.query(sql2,function(err,result){
                     for(var i =0;i < result.rows.length; i++)
                     {
@@ -76,7 +77,6 @@
                     }
                     console.log(moodchart)
                     console.log(datechart)
-
                     var ctx = document.getElementById('mychart');
                   var mychart = new Chart(ctx, {
                   // The type of chart we want to create
@@ -87,64 +87,41 @@
                     labels: datechart,
                   //labels:[1,2,3,4,5,6,7],
                   datasets: [{
-                      label: 'ur mom',
-                      backgroundColor: 'rgb(255, 99, 132)',
-                      borderColor: 'rgb(255, 99, 132)',
+                      label: 'Mood',
+                      backgroundColor: '#44bd48',
+                      borderColor: '#2f7832',
                       data: moodchart,
-                      //data: [moodchart[0],moodchart[1],moodchart[2],moodchart[3],moodchart[4],moodchart[5],moodchart[6],moodchart[7]],
                       borderWidth: 1
 
-                      //[{
-                    //x:"'"+datechart[0]+"'",
-                    /*x:datechart[0],
-                    y:moodchart[0]
-                  },{
-                    x:datechart[1],
-                    y:moodchart[1]
-                  },{
-                    x:datechart[2],
-                    y:moodchart[2]
-                  },{
-                    x:datechart[3],
-                    y:moodchart[3]
-                  },{
-                    x:datechart[4],
-                    y:moodchart[4]
-                  },{
-                    x:datechart[5],
-                    y:moodchart[5]
-                  },{
-                    x:datechart[6],
-                    y:moodchart[6]
-                  },{
-                    x:datechart[7],
-                    y:moodchart[7]*/
-                  //}]
+                  
                     }]
                   },
                   options: {
                     scales: {
-                        yAxes: [{
+                        x: {
                             ticks: {
-                                beginAtZero: true
-                            }
-                        }]
-                    }
+                                font: {
+                                    family: 'Gaegu', // Your font family
+                                    size: 14,
+                                },
+                            },
+                        },
+                      },
+                      y: {
+                            ticks: {
+                                font: {
+                                    family: 'Gaegu', // Your font family
+                                    size: 14,
+                                },
+                            },
+                        },
+                      
+                      
+                      
+                      
+                    
+          
                 }
-                  //config
-                  /*option:{
-                    scales:{
-                      x:{
-                        type:'time',
-                        time:{
-                          unit:'day',
-                          displayFormats: {
-                            day: 'D MMM yyyy'
-                          }
-                        }
-                      }
-                    }
-                  }*/
                       
                 })  
                   
@@ -158,11 +135,19 @@
 
                 
           });//connection
-        
+          
           </script>
         <button id="moods">Record mood</button>
-        <div id="wtodo">To Do</div>
+        <div id = responsebg onload="responseget()">
+          <h2 id="response">Last Entry</h2>
+          <p id="lastresponse"></p>
+        </div>
+        
     </body>
-    
+
+
+    <script>
+      
+    </script>
     <script src="dashboard.js"></script>
 </html>
