@@ -1,3 +1,5 @@
+const moment = require('moment');
+
 var entryc = document.getElementById("Entry");
 entryc.addEventListener("click",entrychange);
 
@@ -19,10 +21,6 @@ function todo(){
   window.location = "task.html";
 
 }
-
-
-
-
 
 
 function moodtr()
@@ -65,3 +63,45 @@ function sidebarclose()
 
   }
 }
+document.addEventListener("DOMContentLoaded", load())
+
+
+
+
+
+//---------------------------------------SQL QUERYS---------------------------------------//
+function load(){
+  var pg = require('pg');
+
+  let usernameg = localStorage.getItem("userg");
+  let conp = localStorage.getItem("passg");
+  var gconn = new pg.Client("postgres://"+usernameg+":"+conp+"@74.68.42.21:5432/heyo_scale");
+  gconn.connect(function(err){
+    sql = "SELECT * FROM public."+ usernameg+"";
+    gconn.query(sql,function(err,result){
+      if(err){
+        console.log(err)
+
+      }
+      else{
+        var row1 = result.rows[0]
+        console.log(row1)
+        var date = JSON.stringify(result.rows[0].timestamp);
+        var text = JSON.stringify(result.rows[0].diary);
+        text = JSON.parse(text)
+        var moodint = JSON.stringify(result.rows[0].moodrating);
+        console.log(date)
+
+        date = moment(date).format('LLLL')
+        document.getElementById("mood").innerText = moodint;
+        document.getElementById("entry").innerText = text;
+        console.log(date)
+        console.log(text)
+        console.log(moodint)
+
+      }
+
+    })//First query
+  })//connection
+}
+          
