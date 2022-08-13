@@ -164,7 +164,7 @@ color: #FFFFFF;
 #scroll{
     position: block;
     width: 1043px;
-    height: 308px;
+    height: 200px;
     left: 304px;
     top: 27px;
     margin-left:auto;
@@ -173,30 +173,37 @@ color: #FFFFFF;
     border-radius: 25px;
     font-family: 'Gaegu';
     font-size: larger;
+    margin-top: 10px;
     
 }
 
 #scroll h1{
     margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
+    margin-left: 10px;
 }
 
 #scroll h2{
-    margin-top: 5px;
+    margin-top: 0px;
     margin-bottom: 5px;
+    margin-left: 10px;
+
 }
 
 #scroll p{
     margin-top: 5px;
     margin-bottom: 5px;
+    margin-left: 10px;
+
 }
 
 #entryborder{
     position: absolute;
-    
+    height: 750px;
     border-style: solid;
     width: 1100px;
     left:300px;
-        
+    border-radius: 25px;    
+    top: 25px;
 }
 

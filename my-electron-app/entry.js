@@ -6,6 +6,7 @@ entryc.addEventListener("click",entrychange);
 function entrychange()
       {
         window.location = "entry.html";
+        
       }
 
       var sdash = document.getElementById("dash")
@@ -72,10 +73,11 @@ document.addEventListener("DOMContentLoaded", load())
 //---------------------------------------SQL QUERYS---------------------------------------//
 function load(){
   var pg = require('pg');
-
+ 
   let usernameg = localStorage.getItem("userg");
   let conp = localStorage.getItem("passg");
   var gconn = new pg.Client("postgres://"+usernameg+":"+conp+"@74.68.42.21:5432/heyo_scale");
+  const parse = require('postgres-date')
   gconn.connect(function(err){
     sql = "SELECT * FROM public."+ usernameg+"";
     gconn.query(sql,function(err,result){
@@ -84,17 +86,37 @@ function load(){
 
       }
       else{
-        var row1 = result.rows[0]
-        console.log(row1)
-        var date = JSON.stringify(result.rows[0].timestamp);
-        var text = JSON.stringify(result.rows[0].diary);
-        text = JSON.parse(text)
-        var moodint = JSON.stringify(result.rows[0].moodrating);
-        console.log(date)
+        for(var i = 0; i < result.length();i++){
+          var 
+        }
 
+
+
+
+
+
+
+
+        var row1 = result.rows[14]
+        console.log(row1)
+        var date = JSON.stringify(result.rows[14].date);
+        date = JSON.parse(date)
+        var datetime = JSON.stringify(result.rows[14].datetime)
+        datetime = JSON.parse(datetime)
+
+        var text = JSON.stringify(result.rows[14].diary);
+        text = JSON.parse(text)
+        var moodint = JSON.stringify(result.rows[14].moodrating);
+        console.log(date)
+        date = date.substring(0,date.lastIndexOf('T'))
+        console.log(date)
+        date = date+" "+datetime;
+        console.log(date);
         date = moment(date).format('LLLL')
-        document.getElementById("mood").innerText = moodint;
-        document.getElementById("entry").innerText = text;
+        document.getElementById("mood").innerText = "Mood: "+moodint;
+        document.getElementById("entry").innerText = "Entry: "+ text;
+        document.getElementById("date").innerText = date;
+
         console.log(date)
         console.log(text)
         console.log(moodint)
