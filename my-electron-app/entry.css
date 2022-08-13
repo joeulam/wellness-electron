@@ -145,10 +145,8 @@ color: #FFFFFF;
     border-radius: 25px;
 }
 
-#wip{
-    position: absolute;
-    width: 251px;
-    height: 34px;
-    left: 450px;
-    top: 400px;
+#entrybg{
+    border-radius: 25px;
+    background: #CBDFBD;
 }
+
