@@ -86,8 +86,8 @@ function load(){
 
       }
       else{
-        for(var i = 0; i < result.length();i++){
-          var 
+        for(var i = 0; i < result.rows.length;i++){
+          var div = document.createElement('div');
         }
 
 
