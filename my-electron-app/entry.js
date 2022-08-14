@@ -88,34 +88,51 @@ function load(){
       else{
         for(var i = 0; i < result.rows.length;i++){
           var div = document.createElement('div');
-        }
+          document.getElementById("entryborder").appendChild(div);
+          div.id = "scroll"+i
+          div.className = "scroll"
 
-
-
-
-
-
-
-
-        var row1 = result.rows[14]
-        console.log(row1)
-        var date = JSON.stringify(result.rows[14].date);
-        date = JSON.parse(date)
-        var datetime = JSON.stringify(result.rows[14].datetime)
-        datetime = JSON.parse(datetime)
-
-        var text = JSON.stringify(result.rows[14].diary);
-        text = JSON.parse(text)
-        var moodint = JSON.stringify(result.rows[14].moodrating);
-        console.log(date)
-        date = date.substring(0,date.lastIndexOf('T'))
+          var date = JSON.stringify(result.rows[i].date);
+          date = JSON.parse(date)
+          var datetime = JSON.stringify(result.rows[i].datetime)
+          datetime = JSON.parse(datetime)
+          date = date.substring(0,date.lastIndexOf('T'))
         console.log(date)
         date = date+" "+datetime;
         console.log(date);
         date = moment(date).format('LLLL')
-        document.getElementById("mood").innerText = "Mood: "+moodint;
-        document.getElementById("entry").innerText = "Entry: "+ text;
-        document.getElementById("date").innerText = date;
+
+
+            var dates = document.createElement('h1');
+            document.getElementById("scroll"+i).appendChild(dates)
+            dates.id = "date"+i
+            document.getElementById("date"+i).innerText = date;
+
+
+            var mood = document.createElement('h2')
+            document.getElementById("scroll"+i).appendChild(mood)
+            mood.id = "mood"+i
+            var moodint = JSON.stringify(result.rows[i].moodrating);
+            document.getElementById("mood"+i).innerText = "Mood: "+moodint;
+
+
+            var entry = document.createElement('p')
+            document.getElementById('scroll'+i).appendChild(entry)
+            entry.id = "entry"+i
+            var text = JSON.stringify(result.rows[i].diary);
+            text = JSON.parse(text)
+            document.getElementById("entry"+i).innerText = "Entry: "+ text;
+
+          
+
+        }
+
+
+        
+
+        
+        
+        
 
         console.log(date)
         console.log(text)
