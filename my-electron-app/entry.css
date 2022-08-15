@@ -211,6 +211,9 @@ color: #FFFFFF;
 #entryborder::-webkit-scrollbar{
     display: none;
 }
+.scroll::-webkit-scrollbar{
+    display: none;
+}
 
 .scroll{
     position: block;
@@ -225,6 +228,8 @@ color: #FFFFFF;
     font-family: 'Gaegu';
     font-size: larger;
     margin-top: 10px;
+    overflow-wrap: break-word;
+    overflow-y: auto;
 }
 .scroll h1{
     margin-top: 5px;
