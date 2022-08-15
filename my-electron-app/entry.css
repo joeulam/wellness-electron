@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@700&display=swap');
+#back{
+    background: #EBD4AB;
+}
+.sidebar{
+    position: absolute;
+    width: 258px;
+    height: 40%;
+    left: 0px;
+    top: 20px;
+    z-index: -100;
+    background: #EBD4AB;
+    border-radius: 0px 0px 25px 25px;
+}
+.heyobg{
+    border-radius:0px 25px 25px 25px;
+    width:259px;
+    height:75px;
+    margin-top: -20px;
+    background-color:#d4e09b;
+    box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+.heyobg:hover{
+    box-shadow: 0 12px 16px 0 rgba(128, 126, 126, 0.24);
+    border-radius: 0px 25px 25px 25px;
+
+}
+/*Side menu choices*/
+.choices{
+    position: absolute;
+    top:81px;
+    height: 100px;
+    width: 258px;
+    display: none;
+    background: #B07D62;
+
+}
+.choices label{
+    align-items: center;
+/*padding: 6px 8px 6px 16px;*/
+  text-decoration: none;
+  display: block;
+  font-family: 'Gaegu', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    margin:auto;
+}
+.choices button{
+    align-items: center;
+/*padding: 6px 8px 6px 16px;*/
+  text-decoration: none;
+  display: block;
+  font-family: 'Gaegu', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    margin:auto;
+
+    border-radius: 25px;
+
+}
+.choices button:hover{
+    background: #8b634d;
+    border-radius: 25px;
+    align-items: center;
+}
+.choices label:hover{
+    background: #8b634d;
+    border-radius: 25px;
+    align-items: center;
+}
+/* ENTRY */
+
+#Entry{
+    width: 210px;
+    height: 41px;
+    padding-top: 16px;
+    color: #FFFFFF;
+}
+
+
+
+
+/* CALENDAR */
+
+#cal{
+    width: 210px;
+    height: 41px;    
+    color: #FFFFFF;
+    padding-top: 15px;
+
+}
+
+
+
+
+/* DASHBOARD */
+
+#dash{
+    width: 210px;
+    height: 41px;    
+    color: #FFFFFF;
+    padding-top: 15px;
+
+}
+
+
+
+/* HEYO */
+
+#heyo{
+    position: absolute;
+    user-select:none;
+margin-left: 71px;
+font-family: 'Gaegu', sans-serif;
+font-style: normal;
+font-weight: 600;
+font-size: 48px;
+line-height: 0px;
+display: flex;
+align-items: flex-end;
+text-align: center;
+
+color: #FFFFFF;
+
+}
+
+#todo{
+    color: #FFFFFF;
+    font-family: 'Gaegu', sans-serif;
+    padding-top: 15px;
+    width: 210px;
+    height: 41px;
+}
+
+#todo:hover{
+    background: #8b634d;
+    border-radius: 25px;
+}
+
+#entrybg{
+    border-radius: 25px;
+    background: #CBDFBD;
+}
+
+#wip{
+    position: absolute;
+    width: 251px;
+    height: 34px;
+    left: 450px;
+    top: 400px;
+}
+
+
+/* Rectangle 1 */
+
+#scroll{
+    position: block;
+    width: 1043px;
+    height: 200px;
+    left: 304px;
+    top: 27px;
+    margin-left:auto;
+    margin-right:auto;
+    background: #CBDFBD;
+    border-radius: 25px;
+    font-family: 'Gaegu';
+    font-size: larger;
+    margin-top: 10px;
+    
+}
+
+#scroll h1{
+    margin-top: 5px;
+    margin-bottom: 0px;
+    margin-left: 10px;
+}
+
+#scroll h2{
+    margin-top: 0px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+
+}
+
+#scroll p{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+
+}
+
+#entryborder{
+    position: absolute;
+    height: 750px;
+    border-style: solid;
+    width: 1100px;
+    left:300px;
+    border-radius: 25px;    
+    top: 25px;
+    overflow-y: auto;
+}
+
+#entryborder::-webkit-scrollbar{
+    display: none;
+}
+
+.scroll{
+    position: block;
+    width: 1043px;
+    height: 200px;
+    left: 304px;
+    top: 27px;
+    margin-left:auto;
+    margin-right:auto;
+    background: #CBDFBD;
+    border-radius: 25px;
+    font-family: 'Gaegu';
+    font-size: larger;
+    margin-top: 10px;
+}
+.scroll h1{
+    margin-top: 5px;
+    margin-bottom: 0px;
+    margin-left: 10px;
+}
+
+.scroll h2{
+    margin-top: 0px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+
+}
+
+.scroll p{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+
+}

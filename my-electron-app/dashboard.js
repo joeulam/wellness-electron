@@ -97,3 +97,11 @@ function responseget()
           })//connection 
 
         };//response get
+
+var entryc = document.getElementById("Entry");
+entryc.addEventListener("click",entrychange);
+
+function entrychange()
+      {
+        window.location = "entry.html";
+      }
