@@ -50,3 +50,70 @@ function todo(){
 
 }
 
+
+var sub = document.getElementById("submit")
+sub.addEventListener("click",send)
+//---------------------------------------SQL QUERYS---------------------------------------//
+function send(){
+  var text = document.getElementById("text").value;
+  var pg = require('pg');
+ 
+  let usernameg = localStorage.getItem("userg");
+  let conp = localStorage.getItem("passg");
+  var gconn = new pg.Client("postgres://"+usernameg+":"+conp+"@74.68.42.21:5432/todo");
+  gconn.connect(function(err){
+    sql = "INSERT INTO public."+usernameg+"(todo) VALUES ('"+text+"')"
+    gconn.query(sql,function(err,result){
+      if(err){
+        console.log(err)
+      }
+      else{
+        console.log("To do inserted")
+        document.getElementById("text").value = ''
+        load()
+      }
+    })
+  })
+
+
+
+}
+
+document.addEventListener("DOMContentLoaded", load())
+
+function load(){
+  var pg = require('pg');
+
+  let usernameg = localStorage.getItem("userg");
+  let conp = localStorage.getItem("passg");
+  var gconn = new pg.Client("postgres://"+usernameg+":"+conp+"@74.68.42.21:5432/todo");
+  gconn.connect(function(err){
+    sql = "SELECT * FROM public."+usernameg
+    gconn.query(sql,function(err,result){
+      if(err){
+        console.log(err)
+      }
+      else{
+        for(var i = 0; i < result.rows.length;i++)
+        {
+          var div = document.createElement('div');
+          document.getElementById("list").appendChild(div);
+          div.id = "todo"+i
+          div.className = "todoc"
+          var checkbox = document.createElement('input');
+          document.getElementById('todo'+i).appendChild(checkbox);
+          checkbox.className = "checkbox-round"
+          checkbox.type ="checkbox"
+          //var div2 = document.createElement('div');
+          //document.getElementById('todo'+i).appendChild(div2);
+          //.id = "checkdiv"+i
+          //div2.className = "checkdiv"
+          //document.getElementById('checkdiv'+i).appendChild(checkbox);
+          
+        }
+        
+        console.log(result)
+      }
+    })
+  })
+}
