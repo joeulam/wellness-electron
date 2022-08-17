@@ -53,16 +53,70 @@ function todo(){
 
 var sub = document.getElementById("submit")
 sub.addEventListener("click",send)
+
+
+
+
+
 //---------------------------------------SQL QUERYS---------------------------------------//
-function send(){
-  var text = document.getElementById("text").value;
+function checks(){
   var pg = require('pg');
  
   let usernameg = localStorage.getItem("userg");
   let conp = localStorage.getItem("passg");
   var gconn = new pg.Client("postgres://"+usernameg+":"+conp+"@74.68.42.21:5432/todo");
   gconn.connect(function(err){
-    sql = "INSERT INTO public."+usernameg+"(todo) VALUES ('"+text+"')"
+    sql = "SELECT * FROM public."+usernameg
+    gconn.query(sql,function(err,result){
+      for(i = 0; i < result.rows.length;i++)
+      {
+        var check = document.getElementsByClassName('checkbox-round')[i]
+        console.log(check)
+        if(check.checked)
+        {
+          remove(i);
+      }
+    }
+    })
+  })
+}
+
+function remove(i)
+{
+  var pg = require('pg');
+ 
+  let usernameg = localStorage.getItem("userg");
+  let conp = localStorage.getItem("passg");
+  var gconn = new pg.Client("postgres://"+usernameg+":"+conp+"@74.68.42.21:5432/todo");
+  gconn.connect(function(err){
+    sql = "delete from" +usernameg+ "where id IN ("+i+")"
+    gconn.query(sql,function(err,result){
+      console.log("yas"+i)
+      var removes = document.getElementById('todo'+i)
+      removes.remove();
+    })
+
+  })
+}
+
+
+
+function send(){
+  var text = document.getElementById("text").value;
+  if(text == "" || text == " ")
+  {
+    console.log("fail")
+    return "failed"
+  }
+  else{
+  var pg = require('pg');
+ 
+  let usernameg = localStorage.getItem("userg");
+  let conp = localStorage.getItem("passg");
+  let id = localStorage.getItem("id");
+  var gconn = new pg.Client("postgres://"+usernameg+":"+conp+"@74.68.42.21:5432/todo");
+  gconn.connect(function(err){
+    sql = "INSERT INTO public."+usernameg+"(todo,id) VALUES ('"+text+"','"+id+"')"
     gconn.query(sql,function(err,result){
       if(err){
         console.log(err)
@@ -70,11 +124,11 @@ function send(){
       else{
         console.log("To do inserted")
         document.getElementById("text").value = ''
-        load()
+        makenew()
       }
     })
   })
-
+  }
 
 
 }
@@ -83,7 +137,6 @@ document.addEventListener("DOMContentLoaded", load())
 
 function load(){
   var pg = require('pg');
-
   let usernameg = localStorage.getItem("userg");
   let conp = localStorage.getItem("passg");
   var gconn = new pg.Client("postgres://"+usernameg+":"+conp+"@74.68.42.21:5432/todo");
@@ -101,9 +154,20 @@ function load(){
           div.id = "todo"+i
           div.className = "todoc"
           var checkbox = document.createElement('input');
+          var text = document.createElement('p');
+
           document.getElementById('todo'+i).appendChild(checkbox);
+          document.getElementById('todo'+i).appendChild(text);
+          text.id = "text"+i;
           checkbox.className = "checkbox-round"
           checkbox.type ="checkbox"
+          checkbox.setAttribute("onclick", "checks()");
+
+          var texts = JSON.stringify(result.rows[i].todo);
+          texts = JSON.parse(texts)
+          document.getElementById("text"+i).innerText = texts;
+          console.log(texts)
+
           //var div2 = document.createElement('div');
           //document.getElementById('todo'+i).appendChild(div2);
           //.id = "checkdiv"+i
@@ -111,9 +175,59 @@ function load(){
           //document.getElementById('checkdiv'+i).appendChild(checkbox);
           
         }
+        let idg = localStorage.setItem("id",result.rows.length);
+
+        console.log(result)
+      }
+    })
+  })//connect
+}
+
+function makenew()
+{
+  var pg = require('pg');
+
+  let usernameg = localStorage.getItem("userg");
+  let conp = localStorage.getItem("passg");
+  var gconn = new pg.Client("postgres://"+usernameg+":"+conp+"@74.68.42.21:5432/todo");
+  gconn.connect(function(err){
+    sql = "SELECT * FROM public."+usernameg
+    gconn.query(sql,function(err,result){
+      if(err){
+        console.log(err)
+      }
+      else{
+          var i = result.rows.length;
+          var div = document.createElement('div');
+          document.getElementById("list").appendChild(div);
+          div.id = "todo"+i
+          div.className = "todoc"
+          var checkbox = document.createElement('input');
+          var text = document.createElement('p');
+
+          document.getElementById('todo'+i).appendChild(checkbox);
+          document.getElementById('todo'+i).appendChild(text);
+          text.id = "text"+i;
+          checkbox.className = "checkbox-round"
+          checkbox.type ="checkbox"
+          checkbox.onclick='checks()'
+          console.log(i)
+
+          var texts = JSON.stringify(result.rows[i-1].todo);
+          texts = JSON.parse(texts)
+          document.getElementById("text"+i).innerText = texts;
+          console.log(texts)
+          setTimeout(500);
+          //var div2 = document.createElement('div');
+          //document.getElementById('todo'+i).appendChild(div2);
+          //.id = "checkdiv"+i
+          //div2.className = "checkdiv"
+          //document.getElementById('checkdiv'+i).appendChild(checkbox);
+          
+        
         
         console.log(result)
       }
     })
-  })
+  })//connect
 }

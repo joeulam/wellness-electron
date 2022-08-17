@@ -208,7 +208,7 @@ border-radius: 25px 25px 0px 0px;
     height: 100px;
     width: 1000px;
     margin: 10px auto;
-    
+    font-family: 'Gaegu', sans-serif;
     border-radius: 25px;
     transition: all .2s ease-in-out; 
 
@@ -216,7 +216,10 @@ border-radius: 25px 25px 0px 0px;
 .todoc:hover{
     transform: scale(1.1);
 }
-
+ .todoc p{
+    font-size: 36px;
+margin: 5px;
+ }
 
 /*.checkdiv{
     vertical-align: middle;  
@@ -224,10 +227,6 @@ border-radius: 25px 25px 0px 0px;
 }*/
 
 .checkbox-round {
-    position: relative;
-    display: table-cell;
-    vertical-align: middle; 
-    float: left;
     width: 1.3em;
     height: 1.3em;
     background-color: white;
@@ -236,7 +235,8 @@ border-radius: 25px 25px 0px 0px;
     appearance: none;
     cursor: pointer;
     position: relative;
-
+    top:40px;
+    right: 450px;
 }
 
 .checkbox-round:checked {
