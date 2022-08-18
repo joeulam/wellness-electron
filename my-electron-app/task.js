@@ -92,7 +92,17 @@ function remove(i)
   let conp = localStorage.getItem("passg");
   var gconn = new pg.Client("postgres://"+usernameg+":"+conp+"@74.68.42.21:5432/todo");
   gconn.connect(function(err){
-    sql = "delete from"+usernameg+"where ctid in (select ctid from a where rnum =1)"
+
+    sql = "ALTER SEQUENCE "+usernameg+"_id_seq RESTART; UPDATE "+usernameg+" SET id = DEFAULT;"
+    gconn.query(sql,function(err){
+      if(err)
+      {
+        console.log(err);
+      }
+    })
+
+
+    sql = "delete from "+usernameg+" where id="+i
     gconn.query(sql,function(err,result){
       if(err){
         console.log(err)
@@ -104,7 +114,10 @@ function remove(i)
       }
       
     })
-
+    
+    
+      
+    
   })
 }
 
@@ -237,8 +250,8 @@ function makenew()
           //.id = "checkdiv"+i
           //div2.className = "checkdiv"
           //document.getElementById('checkdiv'+i).appendChild(checkbox);
-          
-        
+          document.location.reload()
+        checks()
         
         console.log(result)
       }
