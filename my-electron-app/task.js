@@ -84,6 +84,26 @@ function checks(){
   })
 }
 
+function rest(){
+  var pg = require('pg');
+ 
+  let usernameg = localStorage.getItem("userg");
+  let conp = localStorage.getItem("passg");
+  var gconn = new pg.Client("postgres://"+usernameg+":"+conp+"@74.68.42.21:5432/todo");
+  gconn.connect(function(err){
+    sql = "ALTER SEQUENCE "+usernameg+"_id_seq RESTART; UPDATE "+usernameg+" SET id = DEFAULT;"
+    gconn.query(sql,function(err){
+      if(err)
+      {
+        console.log(err);
+      }
+    })
+  })
+  
+
+}
+
+
 function remove(i)
 {
   var pg = require('pg');
@@ -93,16 +113,8 @@ function remove(i)
   var gconn = new pg.Client("postgres://"+usernameg+":"+conp+"@74.68.42.21:5432/todo");
   gconn.connect(function(err){
 
-    sql = "ALTER SEQUENCE "+usernameg+"_id_seq RESTART; UPDATE "+usernameg+" SET id = DEFAULT;"
-    gconn.query(sql,function(err){
-      if(err)
-      {
-        console.log(err);
-      }
-    })
-
-
-    sql = "delete from "+usernameg+" where id="+i
+  
+    sql = "delete from "+usernameg+" where id="+(i+1)
     gconn.query(sql,function(err,result){
       if(err){
         console.log(err)
@@ -111,6 +123,7 @@ function remove(i)
         console.log("yas"+i)
         var removes = document.getElementById('todo'+i)
         removes.remove();
+        rest();
       }
       
     })
