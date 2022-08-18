@@ -70,12 +70,15 @@ function checks(){
     gconn.query(sql,function(err,result){
       for(i = 0; i < result.rows.length;i++)
       {
+        //sql = "set @count = 0; update "+usernameg+" set "+usernameg+" . id = @count:=@count+1;"
+        gconn.query(sql);
         var check = document.getElementsByClassName('checkbox-round')[i]
-        console.log(check)
-        if(check.checked)
+
+        console.log(i)
+        if(check.checked && check != null)
         {
           remove(i);
-      }
+        }
     }
     })
   })
@@ -89,16 +92,21 @@ function remove(i)
   let conp = localStorage.getItem("passg");
   var gconn = new pg.Client("postgres://"+usernameg+":"+conp+"@74.68.42.21:5432/todo");
   gconn.connect(function(err){
-    sql = "delete from" +usernameg+ "where id IN ("+i+")"
+    sql = "delete from"+usernameg+"where ctid in (select ctid from a where rnum =1)"
     gconn.query(sql,function(err,result){
-      console.log("yas"+i)
-      var removes = document.getElementById('todo'+i)
-      removes.remove();
+      if(err){
+        console.log(err)
+      }
+      else{
+        console.log("yas"+i)
+        var removes = document.getElementById('todo'+i)
+        removes.remove();
+      }
+      
     })
 
   })
 }
-
 
 
 function send(){
@@ -110,18 +118,23 @@ function send(){
   }
   else{
   var pg = require('pg');
- 
+  let id = localStorage.getItem("id");
+  id = parseInt(id)
   let usernameg = localStorage.getItem("userg");
   let conp = localStorage.getItem("passg");
-  let id = localStorage.getItem("id");
   var gconn = new pg.Client("postgres://"+usernameg+":"+conp+"@74.68.42.21:5432/todo");
   gconn.connect(function(err){
-    sql = "INSERT INTO public."+usernameg+"(todo,id) VALUES ('"+text+"','"+id+"')"
+    //sql = "INSERT INTO public."+usernameg+"(todo,id) VALUES ('"+text+"','"+id+"')"
+    sql = "INSERT INTO public."+usernameg+"(todo) VALUES ('"+text+"')"
+
     gconn.query(sql,function(err,result){
       if(err){
+        console.log(id)
         console.log(err)
       }
       else{
+        console.log(id)
+        id++;
         console.log("To do inserted")
         document.getElementById("text").value = ''
         makenew()
@@ -175,7 +188,7 @@ function load(){
           //document.getElementById('checkdiv'+i).appendChild(checkbox);
           
         }
-        let idg = localStorage.setItem("id",result.rows.length);
+        localStorage.setItem("id",result.rows.length);
 
         console.log(result)
       }
@@ -204,6 +217,7 @@ function makenew()
           div.className = "todoc"
           var checkbox = document.createElement('input');
           var text = document.createElement('p');
+          localStorage.setItem("id",result.rows.length);
 
           document.getElementById('todo'+i).appendChild(checkbox);
           document.getElementById('todo'+i).appendChild(text);
