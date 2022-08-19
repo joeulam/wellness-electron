@@ -293,3 +293,9 @@ border-radius: 0px 0px 25px 25px;
     text-align: center;
 }
 
+#shop{
+    width: 210px;
+    height: 41px;    
+    color: #FFFFFF;
+    padding-top: 15px;
+}

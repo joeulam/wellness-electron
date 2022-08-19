@@ -49,7 +49,12 @@ function todo(){
   window.location = "task.html";
 
 }
+var shopt = document.getElementById("shop");
+shopt.addEventListener("click",shop);
 
+function shop(){
+  window.location = "shop.html";
+}
 
 var sub = document.getElementById("submit")
 sub.addEventListener("click",send)

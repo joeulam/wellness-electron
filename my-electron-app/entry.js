@@ -15,7 +15,12 @@ function dash(){
   window.location = "dashboard.html";
 
 }
+var shopt = document.getElementById("shop");
+shopt.addEventListener("click",shop);
 
+function shop(){
+  window.location = "shop.html";
+}
 var stodo = document.getElementById("todo")
 stodo.addEventListener("click",todo)
 function todo(){

@@ -121,7 +121,12 @@
 
 }
 
-
+#shop{
+    width: 210px;
+    height: 41px;    
+    color: #FFFFFF;
+    padding-top: 15px;
+}
 
 /* HEYO */
 
@@ -216,3 +221,4 @@ border-radius: 25px;
 #lastresponse::-webkit-scrollbar{
     display: none;
 }
+
