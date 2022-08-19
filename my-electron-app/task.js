@@ -53,8 +53,18 @@ function todo(){
 
 var sub = document.getElementById("submit")
 sub.addEventListener("click",send)
+const sub1 = document.getElementById("text")
 
+sub1.addEventListener("keypress", function(event) {
 
+  if (event.key === "Enter"){
+    console.log("run")
+    event.preventDefault();
+
+    // Trigger the button element with a click
+    send();
+  }
+})
 
 
 
@@ -77,7 +87,7 @@ function checks(){
         console.log(i)
         if(check.checked && check != null)
         {
-          remove(i);
+          remove(i)
         }
     }
     })
