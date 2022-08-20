@@ -39,7 +39,14 @@ var sidebaros = document.getElementById("heyobg");
 sidebaros.addEventListener("click",sidebar);
 sidebaro.addEventListener("click",sidebar);
 
+var entryc = document.getElementById("Entry");
+entryc.addEventListener("click",entrychange);
 
+function entrychange()
+      {
+        window.location = "entry.html";
+      }
+      
 var a = 0;
 function sidebar()
 {

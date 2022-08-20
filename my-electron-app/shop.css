@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@700&display=swap');
+
 #Currency{
     position: absolute;
     left: 200px;
@@ -6,4 +8,156 @@
 
 #back{
     background: #EBD4AB;
+}
+
+.sidebar{
+    position: absolute;
+    width: 259px;
+    height: 47%;
+    left: 0px;
+    top: 20px;
+    z-index: -100;
+    background: #EBD4AB;
+    border-radius: 0px 0px 25px 25px;
+}
+
+/* Heyo bg */
+
+.heyobg{
+    border-radius:0px 25px 25px 25px;
+    width:259px;
+    height:81px;
+    margin-top: -20px;
+    background-color:#d4e09b;
+    box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+.heyobg:hover{
+    box-shadow: 0 12px 16px 0 rgba(128, 126, 126, 0.24);
+    border-radius: 0px 25px 25px 25px;
+
+}
+/*Side menu choices*/
+.choices{
+    position: absolute;
+    top:81px;
+    height: 123px;
+    width: 259px;
+    display: none;
+    background: #B07D62;
+
+}
+.choices label{
+    align-items: center;
+/*padding: 6px 8px 6px 16px;*/
+  text-decoration: none;
+  display: block;
+  font-family: 'Gaegu', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    margin:auto;
+}
+.choices button{
+    align-items: center;
+/*padding: 6px 8px 6px 16px;*/
+  text-decoration: none;
+  display: block;
+  font-family: 'Gaegu', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    margin:auto;
+
+    border-radius: 25px;
+
+}
+.choices button:hover{
+    background: #8b634d;
+    border-radius: 25px;
+    align-items: center;
+}
+.choices label:hover{
+    background: #8b634d;
+    border-radius: 25px;
+    align-items: center;
+}
+
+/* ENTRY */
+
+#Entry{
+    width: 210px;
+    height: 41px;
+    padding-top: 16px;
+    color: #FFFFFF;
+}
+
+
+
+
+/* CALENDAR */
+
+#cal{
+    width: 210px;
+    height: 41px;    
+    color: #FFFFFF;
+    padding-top: 15px;
+
+}
+
+
+
+
+/* DASHBOARD */
+
+#dash{
+    width: 210px;
+    height: 41px;    
+    color: #FFFFFF;
+    padding-top: 15px;
+
+}
+
+#shop{
+    width: 210px;
+    height: 41px;    
+    color: #FFFFFF;
+    padding-top: 15px;
+}
+
+/* HEYO */
+
+#heyo{
+    position: absolute;
+    user-select:none;
+margin-left: 71px;
+font-family: 'Gaegu', sans-serif;
+font-style: normal;
+font-weight: 600;
+font-size: 48px;
+line-height: 0px;
+display: flex;
+align-items: flex-end;
+text-align: center;
+
+color: #FFFFFF;
+
+}
+
+#todo{
+    color: #FFFFFF;
+    font-family: 'Gaegu', sans-serif;
+    padding-top: 15px;
+    width: 210px;
+    height: 41px;
+}
+
+#todo:hover{
+    background: #8b634d;
+    border-radius: 25px;
 }
