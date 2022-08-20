@@ -71,6 +71,13 @@ sub1.addEventListener("keypress", function(event) {
   }
 })
 
+var entryc = document.getElementById("Entry");
+entryc.addEventListener("click",entrychange);
+
+function entrychange()
+      {
+        window.location = "entry.html";
+      }
 
 
 //---------------------------------------SQL QUERYS---------------------------------------//
