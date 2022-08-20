@@ -15,7 +15,12 @@ function dash(){
   window.location = "dashboard.html";
 
 }
+var shopt = document.getElementById("shop");
+shopt.addEventListener("click",shop);
 
+function shop(){
+  window.location = "shop.html";
+}
 var stodo = document.getElementById("todo")
 stodo.addEventListener("click",todo)
 function todo(){
@@ -34,7 +39,14 @@ var sidebaros = document.getElementById("heyobg");
 sidebaros.addEventListener("click",sidebar);
 sidebaro.addEventListener("click",sidebar);
 
+var entryc = document.getElementById("Entry");
+entryc.addEventListener("click",entrychange);
 
+function entrychange()
+      {
+        window.location = "entry.html";
+      }
+      
 var a = 0;
 function sidebar()
 {

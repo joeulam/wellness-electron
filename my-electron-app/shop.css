@@ -1,5 +1,14 @@
-/* sidebar */
 @import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@700&display=swap');
+
+#Currency{
+    position: absolute;
+    left: 200px;
+    top: 500px;
+}
+
+#back{
+    background: #EBD4AB;
+}
 
 .sidebar{
     position: absolute;
@@ -10,13 +19,6 @@
     z-index: -100;
     background: #EBD4AB;
     border-radius: 0px 0px 25px 25px;
-}
-
-.back{
-    background: #EBD4AB;
-    z-index: -1000;
-    user-select: none;
-
 }
 
 /* Heyo bg */
@@ -159,66 +161,3 @@ color: #FFFFFF;
     background: #8b634d;
     border-radius: 25px;
 }
-
-#moods{
-    position: absolute;
-width: 270px;
-height: 87px;
-left: 1115px;
-top: 674px;
-font-family: 'Gaegu', sans-serif;
-user-select:none;
-border-radius: 25px;
-}
-
-#img{
-    width:975px;
-    height:315px;
-    position:absolute;
-    left: 406px;
-    top: 27px;
-    user-select: none;
-}
-
-#response{
-
-
-font-family: 'Gaegu';
-font-style: normal;
-font-weight: 700;
-font-size: 24px;
-display: flex;
-margin: 0px;
-padding: 10px;
-padding-bottom: 0px;
-color: #000000;
-
-
-}
-#responsebg{
-    position: absolute;
-width: 688px;
-height: 412px;
-left: 400px;
-top: 400px;
-background-color:#CBDFBD;
-border-radius: 25px;
-}
-#lastresponse{
-    display: block;
-    text-align: center;
-    font-family: 'Gaegu';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    padding: 10px;
-    overflow-wrap: break-word;
-    overflow: scroll;
-    margin: 0%;
-    
-    max-height: 330px;
-}
-#lastresponse::-webkit-scrollbar{
-    display: none;
-}
-

@@ -12,10 +12,21 @@ function moodtr()
   window.location = "mood.html";
 }
 
+window.onload=function(){
+  document.getElementById("heyobg").click();
+};
+
 var sidebaro = document.getElementById("heyo");
 var sidebaros = document.getElementById("heyobg");
 sidebaros.addEventListener("click",sidebar);
 sidebaro.addEventListener("click",sidebar);
+
+var shopt = document.getElementById("shop");
+shopt.addEventListener("click",shop);
+
+function shop(){
+  window.location = "shop.html";
+}
 
 
 var a = 0;
@@ -23,12 +34,12 @@ function sidebar()
 {
   if(a%2==0)
   {
-    a++;
     var elems = document.getElementsByClassName('choices');
     for (var i=0;i<elems.length;i+=1){
     elems[i].style.display = 'block';
     document.getElementsByClassName('sidebar')[i].style.background = "#B07D62";
     }
+    a++;
   }
   else{
     sidebarclose()

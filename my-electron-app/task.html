@@ -1,7 +1,7 @@
 
 <!DOCTYPE HTML>
 <link href="./task.css" rel="stylesheet" type="text/css" />
-
+<script src="https://kit.fontawesome.com/682f4d3c5e.js" crossorigin="anonymous"></script>
 <html id="back">
 <body>
 
@@ -11,21 +11,34 @@
         </div>
         <div class="choices">
             <label id="dash">DASHBOARD</label>
-            <label id="cal">CALENDAR</label>
             <label id="Entry">ENTRY</label>
             <label id="todo">TO DO</label>
+            <label id="shop">SHOP</label>
+
         </div>
     </div>
-    <div id="wip">
-        <head>My Task list</head><br>
-        <p>Theres no list.</p>
-        <div class="popup">Press this to make one</div>
-        <span id="popuptext">What would you like to call this list?<br></span>
+  
+
+
+<div id="listbg">
+    <div id="namebg">
+        <h1>TO DO LIST</h1>
     </div>
-    
 
+    <div id="list">
 
-</body>
+    </div>
+
+    <div id="textbox">
+        <div id="textbg">
+            <textarea id="text" placeholder="Type something here"></textarea>
+            <button id="submit">
+                <i id="icon" class="fa-solid fa-arrow-turn-up fa-2xl"></i>
+            </button>
+        </div>
+        
+    </div>
+</div>
 
 <script src="./task.js"></script>
 </html>
