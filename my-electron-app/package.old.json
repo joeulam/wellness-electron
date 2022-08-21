@@ -4,9 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "electron ./main.js",
-    "rebuild": "./node_modules/.bin/electron-rebuild",
-    "deploy": "node ./config/firebase-deploy.js"
+    "start": "electron ."
   },
   "author": "Joey Lam",
   "license": "ISC",
@@ -15,7 +13,6 @@
   },
   "dependencies": {
     "asar": "^3.2.0",
-    "electron-firebase": "^1.2.0",
     "moment": "^2.29.4",
     "pg": "^8.7.3",
     "requirejs": "^2.3.6"
