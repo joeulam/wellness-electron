@@ -90,6 +90,7 @@ function todo(){
 
 }
 
+//functions//
 function responseget()
         {
           var pg = require('pg');
