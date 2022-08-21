@@ -6,7 +6,6 @@
     "date-fns": "^2.29.1",
     "electron": "^20.0.2",
     "electron-firebase": "^1.2.0",
-    "firebase": "^9.9.3",
     "moment": "^2.29.4",
     "postgres-date": "^2.1.0",
     "react": "^18.2.0"
