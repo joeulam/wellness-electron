@@ -1,5 +1,7 @@
 const moment = require('moment');
-
+window.onload=function(){
+  document.getElementById("heyobg").click();
+};
 var entryc = document.getElementById("Entry");
 entryc.addEventListener("click",entrychange);
 
@@ -50,7 +52,7 @@ function entrychange()
 var a = 0;
 function sidebar()
 {
-  if(a%2==0)
+  if(a%2==0 || a == 0)
   {
     a++;
     var elems = document.getElementsByClassName('choices');

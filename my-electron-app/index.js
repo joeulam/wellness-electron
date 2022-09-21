@@ -7,7 +7,7 @@ const createWindow = () => {
       resizable:false,
       autoHideMenuBar: true,
       webPreferences: {
-        devTools: false,
+        devTools: true,
         nodeIntegration: true,
         contextIsolation: false,
         preload: "my-electron-app/preload.js"

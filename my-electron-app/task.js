@@ -34,7 +34,9 @@ function sidebarclose()
   }
 }
 
-
+window.onload=function(){
+  document.getElementById("heyobg").click();
+};
 
 var sdash = document.getElementById("dash")
 sdash.addEventListener("click",dash)

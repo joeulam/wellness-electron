@@ -35,7 +35,7 @@ function sidebar()
   if(a%2==0)
   {
     var elems = document.getElementsByClassName('choices');
-    for (var i=0;i<elems.length;i+=1){
+    for (var i=0;i<elems.length;i++){
     elems[i].style.display = 'block';
     document.getElementsByClassName('sidebar')[i].style.background = "#B07D62";
     }

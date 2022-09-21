@@ -66,3 +66,6 @@ function entrychange()
 
 
 
+      window.onload=function(){
+        document.getElementById("heyobg").click();
+      };
