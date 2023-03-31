@@ -4,7 +4,7 @@
     "chartjs-adapter-date-fns": "^2.0.0",
     "chartjs-adapter-moment": "^1.0.0",
     "date-fns": "^2.29.1",
-    "electron": "^20.0.2",
+    "electron": "^22.3.5",
     "electron-firebase": "^1.2.0",
     "moment": "^2.29.4",
     "postgres-date": "^2.1.0",
